@@ -11,7 +11,7 @@ import mainImage from "../../assets/mainImage.jpg";
 const SideBar = () => {
     const [activeTab, setActiveTab] = useState("Search Flight");
     const [collapsed, setCollapsed] = useState(false);
-    const [dropdownOpen, setDropdownOpen] = useState(false); // State for dropdown visibility
+    const [dropdownOpen, setDropdownOpen] = useState(false);
 
     const menuItems = [
         { name: "Search Flight" },
@@ -25,17 +25,17 @@ const SideBar = () => {
     const renderComponent = () => {
         switch (activeTab) {
             case "Search Flight":
-                return <SearchFlight />;
+                return <SearchFlight setActiveTab={setActiveTab} />;
             case "Passenger Details":
-                return <PassengerDetails />;
+                return <PassengerDetails setActiveTab={setActiveTab} />;
             case "Select Seat":
-                return <SelectSeat />;
+                return <SelectSeat setActiveTab={setActiveTab} />;
             case "Boarding Pass":
-                return <BoardingPass />;
+                return <BoardingPass setActiveTab={setActiveTab} />;
             case "Self CheckIn":
-                return <SelfCheckIn />;
+                return <SelfCheckIn setActiveTab={setActiveTab} />;
             case "Conclusion":
-                return <Conclusion />;
+                return <Conclusion setActiveTab={setActiveTab} />;
             default:
                 return null;
         }
@@ -93,7 +93,7 @@ const SideBar = () => {
                                     key={item.name}
                                     onClick={() => {
                                         setActiveTab(item.name);
-                                        setDropdownOpen(false); // Close dropdown on selection
+                                        setDropdownOpen(false); 
                                     }}
                                     className={`w-full text-left px-4 py-2 text-md font-medium rounded-lg transition-all duration-300 ${activeTab === item.name
                                         ? "bg-pink-400 text-white"
