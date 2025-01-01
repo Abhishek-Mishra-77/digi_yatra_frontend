@@ -93,7 +93,7 @@ const SideBar = () => {
                                     key={item.name}
                                     onClick={() => {
                                         setActiveTab(item.name);
-                                        setDropdownOpen(false); 
+                                        setDropdownOpen(false);
                                     }}
                                     className={`w-full text-left px-4 py-2 text-md font-medium rounded-lg transition-all duration-300 ${activeTab === item.name
                                         ? "bg-pink-400 text-white"
